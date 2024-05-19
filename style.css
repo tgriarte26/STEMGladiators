@@ -1,0 +1,473 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Slab", serif;
+}
+
+body {
+    background-color: #dc143c;
+    color: #edf0f1;
+}
+
+li, a {
+    font-weight: bold;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+.container {
+    position: fixed;
+    z-index: 10;
+}
+
+.container .logo {
+    cursor: pointer;
+    margin-left: 100px;
+    position: static;
+    margin-top: 50px;
+}
+
+.container .text {
+    font-weight: bold;
+    font-size: 30px;
+    margin-left: 30px;
+    position: static;
+}
+
+.pagetitle {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 300px;
+    background-color: #dc143c;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    margin-top: 200px;
+    z-index: 10;
+}
+
+.sidebar a {
+    display: block;
+    padding: 16px;
+    font-size: 30px;
+    border-start-end-radius: 40px;
+    border-bottom-right-radius: 40px;
+    transition: 0.5s;
+}
+
+.sidebar a.active {
+    background-color: #f7de97;
+    color: black;
+}
+
+.sidebar a:hover:not(.active) {
+    background-color: #C0C0C0;
+    color: black;
+}
+
+.news-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-family: "Roboto", sans-serif;
+    box-shadow: 0 4px 8px -4px rgba(0,0,0,0.3);
+    background-color: #f7de97;
+    overflow: hidden;
+    z-index: 15;
+}
+
+.news-container .title {
+    position: absolute;
+    background: #960E29;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    color: #fff;
+    font-weight: bold;
+    z-index: 200;
+}
+
+.news-container ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    animation: scroll 25s infinite linear;
+}
+
+.news-container ul li {
+    white-space: nowrap;
+    padding: 10px;
+    color: #494949;
+    background-color: #f7de97;
+}
+
+.news-container ul li:after {
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.news-container ul li:last-child::after {
+    display: none;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 320px;
+    padding: 20px;
+    gap: 20px;
+}
+
+.card { 
+    width: 325px; 
+    background-color: #960E29;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+    margin: 20px; 
+    flex-direction: column;
+    margin-top: 50px;
+    height: 325px;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    background-color: #fff;
+    border: 12px #960E29 solid;
+    border-radius: 8px;
+}
+
+.card-content {
+    padding: 10px;
+    background-color: #960E29;
+    min-height: 50px;
+    position: relative;
+    justify-content: space-between;
+}
+
+.card-content h3 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.card-content p {
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.card .button {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px; 
+    margin-bottom: 10px;
+}
+
+.card .button a {
+    color: white;
+}
+
+.about-us-container {
+    padding: 70px;
+    border-radius: 4px;
+    border: 5px solid #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-left: 400px;
+    margin-right: 150px;
+    
+}
+
+.about-us-container h2 {
+    font-size: 70px;
+    color: white;
+    text-align: center;
+}
+
+.about-us-container p {
+    font-size: 35px;
+    line-height: 1.5;
+    text-align: left;
+    word-spacing: 10px;
+    color: black;
+}
+
+.about-us-container b{
+    color: white;
+}
+
+.team-container {
+    margin-top: 20px;
+    padding: 50px;
+    margin-left: 400px;
+    margin-right: 150px;
+    border-radius: 4px;
+    border: 5px solid #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.team-container h2 {
+    font-size: 70px;
+    color: white;
+    text-align: center;
+}
+
+.team-container .profile {
+    display: block;
+    border-radius: 50%;
+    width: 200px;
+    margin: 20px auto;
+}
+
+.team-container h3 {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.mark {
+    background-color: yellow;
+}
+
+.search {
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 980px;
+    padding-top: 55px;
+}
+
+input {
+    border: 5px solid #333;
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.button-container {
+    justify-content: space-around;
+    margin-left: 748px;
+}
+  
+.but {
+    border: 5px solid #757575;
+    outline: none;
+    padding: 12px 16px;
+    background-color: #AFB1AE;
+    cursor: pointer;
+    margin-top: 200px;
+    z-index: 100;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+  
+.but:hover {
+    background-color: #CCCCCC;
+}
+  
+.but.active {
+    background-color: #FAFAFA;
+}
+
+@media only screen and (max-width:800px) {
+    .card {
+        margin-top: 20px;
+        min-width: 200px;
+        float:left;
+    }
+
+    .sidebar {
+        width: 250px;
+    }
+    .sidebar a {
+        font-size: 30px;
+        float: left;
+    }
+    .container .text {
+        position: relative;
+        font-size: 20px;
+        margin-left: 20px;
+    }
+    .container .logo {
+        position: relative;
+        margin-left: 50px;
+        z-index: 100;
+        margin-right: auto;
+    }
+    .about-us-container {
+        position: relative;
+        margin-left: 260px;
+        margin-right: 20px;
+        padding: 60px;
+    }
+
+    .about-us-container h2 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .about-us-container p {
+        font-size: 20px;
+        text-align: left;
+    }
+
+    .team-container {
+        position: relative;
+        margin-left: 260px;
+        margin-right: 20px;
+        padding: 35px;
+    }
+
+    .team-container h2 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .team-container .profile {
+        width: 100px;
+        height: 100px;
+        margin-top: 20px;
+    }
+
+    .team-container h3 {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 20px;
+    }
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-900px);
+    }
+}
+
+@media only screen and (min-width: 500px) {
+    .button-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        position: relative;
+        padding-right: 200px;
+        padding-top: 200px;
+        margin-left: 350px;
+    }
+    .search {
+        margin-left:360px;
+        z-index: 10;
+    }
+    .input-filter{
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-right:300px;
+        position:relative;
+    }
+
+    .but {
+        margin: 10px;
+        
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    .card {
+    margin-left: 115px;
+    }
+    .button-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        position: relative;
+        margin-left: 684px;
+        padding-top: 200px;
+    }
+    .search {
+        margin-left: 966px;
+    }
+    .input-filter{
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-right: 300px;
+        position:relative;
+    }
+
+    .but {
+        margin: 10px;
+    
+    }
+}
+
+
+
+@media only screen and (min-width: 2100px) {
+    .card {
+        margin-left: 115px;
+    }
+    .button-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        position: relative;
+        margin-left: 889px;
+        padding-top: 200px;
+    }
+    .search {
+        margin-left: 1062px;
+    }
+    .input-filter{
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-right:300px;
+        position:relative;
+    }
+
+    .but {
+        margin: 10px;
+        
+    }
+}
+
+@media only screen and (min-width: 2450px) {
+    .card {
+        margin-left: 115px;
+    }
+    .button-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        position: relative;
+        margin-left: 1109px;
+        padding-top: 200px;
+    }
+    .search {
+        margin-left: 1388px;
+    }
+    .input-filter{
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-right:300px;
+        position:relative;
+    }
+
+    .but {
+        margin: 10px;
+        
+    }
+}
